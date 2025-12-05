@@ -2,6 +2,8 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import { router } from "./app/routes";
 import { globalErrorHandler } from "./app/middlewares/globalErrorHandler";
+import notFound from "./app/middlewares/notFound";
+
 const app = express();
 
 app.use(express.json());
@@ -14,5 +16,6 @@ app.get("/", (req: Request, res: Response) => {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 app.use(globalErrorHandler);
+app.use(notFound);
 
 export default app;
