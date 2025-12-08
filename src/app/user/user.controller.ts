@@ -16,9 +16,6 @@ const createUser = catchAsync(
       message: "User Create Successfully",
       data: user,
     });
-    // res
-    //   .status(httpStatus.CREATED)
-    //   .json({ message: "User Create Successfully", user });
   }
 );
 
